@@ -185,3 +185,5 @@ This project has as main objective to facilitate the listing of consultations of
 Django documentation for user creation: [here](https://docs.djangoproject.com/en/4.1/topics/auth/customizing/)
 
 Stackoveflow for modalview and other's research: [here](https://stackoverflow.com/questions/45306970/passing-data-to-bootstrap-modal-django-template)
+
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/final/capstone/) para acessar a página do desafio. 
