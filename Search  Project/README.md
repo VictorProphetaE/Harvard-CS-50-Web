@@ -23,3 +23,5 @@ Você também pode acessar as páginas de pesquisa de imagens e pesquisa avança
 Essas páginas dependem do Bootstrap 5.2.0 para estilos e funcionalidades adicionais. Os arquivos CSS e JS do Bootstrap são carregados a partir de um CDN (Content Delivery Network) para facilitar a utilização.
 
 Certifique-se de ter uma conexão com a internet ao usar essas páginas para garantir o carregamento adequado do Bootstrap.
+
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/0/search/) para acessar a página do desafio. 
