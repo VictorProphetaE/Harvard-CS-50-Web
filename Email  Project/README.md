@@ -48,3 +48,5 @@ A aplicação possui as seguintes funcionalidades:
 - Marcação de emails como lidos: os usuários podem marcar emails como lidos.
 - Arquivamento de emails: os usuários podem arquivar ou desarquivar emails.
 - Resposta a emails: os usuários podem responder a um email específico.
+
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/3/mail/) para acessar a página do desafio. 
