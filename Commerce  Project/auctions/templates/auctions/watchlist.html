@@ -1,0 +1,29 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <center><h2>Watchlist</h2></center> 
+    {% for listing in watchlist %}
+    <div class="card mb-3" style="max-width: 1500px;">
+        {% if not listing.closed %}
+            <div class="row g-0">
+                <div class="col-md-4">
+                    {% if listing.listing.image %}
+                        <img src="{{ listing.listing.image.url }}" class="img-fluid rounded-start" alt="image">
+                    {% endif %}
+                </div>
+                <div class="col-md-8 position-relative">
+                        <div class="card-body">
+                        <h5 class="card-title"><strong>{{ listing.listing.item }}</strong></h5>
+                        <p class="card-text"><strong>Description</strong>: {{listing.listing.description|slice:":50"}}</p>
+                        <p class="card-text"><strong>Price</strong>: $ {{listing.listing.price}}</p>
+                        <p class="card-text"><strong>Category</strong>: {{listing.listing.get_category_display}}</p>
+                        <p class="card-text"><strong>Seller</strong>: {{listing.listing.seller }}</p>
+                        <p class="card-text"><small cclass="listing-list-date">Created: {{listing.listing.time|date:"M. d, Y"}}, {{ listing.listing.time|time:"P" }}</small></p>
+                        <a href="{% url 'listing_page' listing.listing.id %}" class="btn btn-primary position-absolute top-50 end-0 translate-middle-y btn-lg">Go to Listing</a>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+    {% endfor %}
+{% endblock %}

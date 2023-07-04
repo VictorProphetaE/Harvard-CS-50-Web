@@ -1,0 +1,16 @@
+{% extends "ClinicMan/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="mx-auto">
+    <h2>Add Patient</h2>
+    
+    <form action="{% url 'addpatient' %}" method="post">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <input class="btn btn-primary" type="submit" value="Register">
+    </form>
+
+</div>
+{% endblock %}

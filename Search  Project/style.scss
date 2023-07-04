@@ -1,0 +1,78 @@
+body{
+	font-family:Futura, Trebuchet MS, Arial, san-serif;
+}
+
+html,body{
+	min-width:400px
+}
+
+  body,html{
+	height:100%;
+	margin:0;
+	padding:0
+  }
+
+
+.center {
+	margin-top: 325px;
+}
+
+@media only screen and (max-height: 500px) {
+	.center {
+		margin-top: 15px;
+	}
+}
+
+input[type=text] {
+	max-width: 500px;
+  }
+
+.form-control,.input-group-text {
+	-webkit-border-radius: 50px;
+	-moz-border-radius: 50px;
+	border-radius: 50px;
+  height:40px;
+  line-height:40px;
+  width:50px
+}
+
+.image{
+	width: 350px;
+	padding: 30px;
+  }
+
+.image-nav{
+	width: 125px;
+}
+
+label {
+	margin-top: 15px;
+	margin-left: 40px;
+	margin-bottom: 10px;
+	font-size: 22px;
+	color:red;
+  }
+
+.searchbar {
+	border-radius: 5px;
+	display: block;
+	margin: 7px;
+	padding: 5px;
+	width: 550px;
+  }
+  
+@media only screen and (max-width: 600px) {
+	.searchbar {
+	  width: 190px;
+	}
+}
+
+.input-table {
+	margin-top: 40px;
+	margin-left: 40px;
+	font-size: 10pt;
+  }
+  .button-loc{
+	float: right;
+	margin-right:6px
+  }

@@ -1,0 +1,24 @@
+{% extends 'auctions/layout.html' %}
+
+{% block body %}
+    <center><h2>{{categoryname}}</h2></center>
+    <div class="card-group">
+        {% for listing in listings %}
+            {% if not listing.closed %}
+                <div class="card mb-3 mx-2" style="max-width: 540px;">
+                    <a href="{% url 'listing_page' listing.id %}">
+                    {% if listing.image %}
+                        <img src="{{ listing.image.url }}" class="img-fluid rounded" alt="image">
+                    {% endif %}
+                    <div class="card-body text-dark">
+                        <h5 class="card-title"><strong>{{ listing.item }}</strong></h5>
+                        <p class="card-text"><strong>Description</strong>: {{listing.description|slice:":50"}}</p>
+                        <p class="card-text"><strong>Price</strong>: $ {{listing.price}}</p>
+                        <p class="card-text"><strong>Category</strong>: {{listing.get_category_display}}</p>
+                        <p class="card-text"><small class="text-muted">Created: {{listing.time|date:"M. d, Y"}}, {{ listing.time|time:"P" }}</small></p>
+                    </div>
+                </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endblock %}

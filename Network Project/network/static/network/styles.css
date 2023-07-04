@@ -1,0 +1,130 @@
+body{
+    font-family: Verdana, Geneva, Tahoma,Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+html,body{
+  min-width:400px
+}
+
+.like-button {
+    display: flex;
+    align-items: flex-start;
+    justify-content: start;
+  }
+  
+  .like-button.animated {
+    -webkit-animation: pop 0.9s both;
+    animation: pop 0.9s both;
+  }
+  .like-button svg {
+    opacity: 1;
+  }
+  .like-button.Unliked svg path {
+    fill: #333;
+    transition: fill .4s ease-out;
+  }
+  .like-button.Liked svg path {   
+    fill: #2196f3;
+   }
+
+  .button1
+  {
+    background-color: white; 
+    border-radius: 10px;
+    width: 150px;
+    color: black;
+    border-color: black;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border: 2px solid;
+    display:none;
+  }
+  
+  .button1:hover{
+    background-color: black;
+    border-color: black;
+    color: White;
+  }
+
+  .button2
+  {
+    background-color: white; 
+    border-radius: 10px;
+    width: 150px;
+    color: gray;
+    border-color: gray;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border: 2px solid;
+  }
+  
+  .button2:hover{
+    background-color: gray;
+    border-color: gray;
+    color: White;
+  }
+
+  .button3
+  {
+    background-color: white; 
+    border-radius: 10px;
+    width: 150px;
+    color: green;
+    border-color: green;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border: 2px solid;
+  }
+  
+  .button3:hover{
+    background-color: green;
+    border-color: green;
+    color: White;
+  }
+
+  .button4
+  {
+    background-color: white; 
+    border-radius: 10px;
+    width: 150px;
+    color: red;
+    border-color: red;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    padding: .25rem .5rem;
+    font-size: .875rem;
+    line-height: 1.5;
+    border: 2px solid;
+  }
+  
+  .button4:hover{
+    background-color: red;
+    border-color: red;
+    color: White;
+  }
+
+  .loginpage {
+    max-width: 540px;
+    align-items: flex-start;
+    justify-content: center;
+    padding: auto;
+  }
+
+  .container {
+    border-radius: 10px;
+  }

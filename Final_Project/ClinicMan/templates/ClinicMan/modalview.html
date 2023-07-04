@@ -1,0 +1,25 @@
+{% extends "ClinicMan/layout.html" %}
+{% load static %}
+
+{% block body %}
+<a class="back" onclick="history.go(-1)">Back Page<i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+<div class="container">
+  <table class="table table-striped table-bordered border-primary" >
+    <tbody>
+        <tr>
+            <td><label for="message-text" class="col-form-label"><p>Symptoms: {{ prescription.symptoms }}</p></label></td>
+        </tr>
+        <tr>
+            <td><label for="recipient-name" class="col-form-label"><p>Prescription: {{ prescription.prescription }}</p></label></td>
+        </tr>
+        <tr>
+            <td><label for="message-text" class="col-form-label"><p>Appointment Date: {{ prescription.date }}</p></label></td>
+        </tr>
+    </tbody>
+  </table>
+</div>
+{% endblock %}
+
+{% block script %}
+  <script type="text/javascript" src="{% static 'ClinicMan/script.js' %}"></script>
+{% endblock %}

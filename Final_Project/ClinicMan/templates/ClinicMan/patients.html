@@ -1,0 +1,85 @@
+{% extends "ClinicMan/layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="container">
+    <table class="table table-borderless" id="patientTable" >
+    <thead class="border-bottom font-weight-bold">
+        <tr>
+            <td>Patient ID</td>
+            <td>Patient Name</td>
+            <td>Patient Gender</td>
+            <td>Patient Email</td>
+            <td>Patient Age</td>
+            <td>Patient Phone</td>
+            <td>Patient Address</td>
+        </tr>
+    </thead>
+    <tbody>
+        {% for patient in patients %}
+        <tr id="patient{{patient.id}}">
+            <td id="userName{{patient.id}}">{{ patient.name }}</td>
+            <td id="userGender{{patient.id}}">{{ patient.gender }}</td>
+            <td id="userEmail{{patient.id}}">{{ patient.email }}</td>
+            <td id="userAge{{patient.id}}">{{ patient.age }}</td>
+            <td id="userPhone{{patient.id}}">{{ patient.phone }}</td>
+            <td id="userAddress{{patient.id}}">{{ patient.address }}</td>
+            <td>
+            <button idpatient="{{patient.id}}"class="btneditpat" data-toggle="modal" data-target="#modaledit"><i class="fa fa-edit"></i></button>
+          </td>
+        </tr>   
+        {% endfor %}
+    </tbody>
+</table>
+</div>
+<nav>
+    <ul class="pagination justify-content-center">
+        {% if posts.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+        {% endif %}
+        <li class="page-item active" aria-current="page" class="current">
+            <a class="page-link" href="#">{{ posts.number }}</a>
+        </li>
+        {% if posts.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+<!-- Modal -->
+<div class="modal fade edit-modal" id="modaledit" tabindex="-1" role="dialog" aria-labelledby="modaleditlabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+          <h5 class="modal-title" id="modaleditlabel">Update Patient</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+          </button>
+          </div>
+          <form id="updatepatient" action="">
+          <div class="modal-body">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input class="form-control" id="form-name" type="text" name="formName"/>
+            <label for="email">Email</label>
+            <input class="form-control" id="form-email" type="text" name="formEmail">
+            <label for="address" >Address</label>
+            <input class="form-control" id="form-address" type="text" name="formAddress"/>
+            <label for="phone{">Phone</label>
+            <input class="form-control" id="form-phone" type="text" name="formPhone"/>
+          </div>
+          <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary" id="savepatient">Save</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+
+{% endblock %}
+{% block script %}
+    <script type="text/javascript" src="{% static 'ClinicMan/script.js' %}"></script>
+{% endblock %}

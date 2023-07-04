@@ -1,0 +1,70 @@
+{% extends "ClinicMan/layout.html" %}
+{% load static %}
+
+{% block body %}
+<a class="back" onclick="history.go(-1)">Back Page<i class="fa fa-arrow-left" aria-hidden="true"></i></a>
+<div class="container">
+    <table class="table table-striped table-bordered border-primary " id="patientTable" >
+        <tbody>
+            <tr>
+                <td ><p>Patient Name: {{ patients.name }}</p></td>
+            </tr>
+            <tr>
+                <td ><p>Patient Gender: {{ patients.gender }}</p></td>
+            </tr>
+            <tr>
+                <td ><p>Patient Age: {{ patients.age }}</p></td>
+            </tr>
+            <tr>
+                <td ><p>Patient Phone: {{ patients.phone }}</p></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container">
+    <table class="table table-striped table-bordered border-primary" id="patientTable" >
+        <thead class="border-bottom font-weight-bold">
+            <tr>
+                <td>Doctor Name</td>
+                <td>Appointment Date</td>
+                <td>Prescription</td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for appointment in appointments %}
+            <div>
+                <tr> 
+                    <td><p>{{ appointment.doctor }}</p></td>
+                    <td><p>{{appointment.date}}, {{ appointment.time }}</p></td>
+                {% for prescription in prescriptions %}
+                    {% if prescription.doctor == appointment.doctor and prescription.date == appointment.date %}
+                    <td><a class="viewpre" href="{% url 'modalview' prescription.id %}"><i class="fa fa-eye"></i></a></td>
+                    {% endif %}
+                {% endfor %}
+                </tr>
+            </div>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+<nav>
+    <ul class="pagination justify-content-center">
+        {% if posts.has_previous %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts.previous_page_number }}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=1">&laquo; first</a></li>
+        {% endif %}
+        <li class="page-item active" aria-current="page" class="current">
+            <a class="page-link" href="#">{{ posts.number }}</a>
+        </li>
+        {% if posts.has_next %}
+            <li class="page-item"><a class="page-link" href="?page={{ posts.next_page_number }}">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">Last &raquo;</a></li>
+        {% endif %}
+    </ul>
+</nav>
+{% endblock %}
+
+{% block script %}
+    <script type="text/javascript" src="{% static 'ClinicMan/script.js' %}"></script>
+{% endblock %}

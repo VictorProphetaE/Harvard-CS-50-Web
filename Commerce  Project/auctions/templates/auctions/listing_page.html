@@ -1,0 +1,90 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+<div class="container">
+    <div class="row mb-3">
+        {% if user.is_authenticated and user.id != listing.seller.id %}
+        <form action="{% url "listing_page" listing.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-secondary" name="button" value="Watchlist" style="float: left;">Watchlist</button>
+        </form>
+        {% endif %}
+        {% if user.username == listing.seller.username and not listing.closed %}
+        <form action="{% url 'endlisting' listing.id %}" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="button" class="btn btn-danger" value="Close" style="float: right;">Close</button>
+        </form>
+        {% endif %}
+    <center><h1 class="mb-3"><strong>Listing: {{ listing.item }}</strong></h1></center>
+    <div class="col-md-6 themed-grid-col">
+        <div class="container" style="max-width: 300px; max-height: 200px;">
+            <div class="container" style="width: 100%; height: auto;">
+                {% if listing.image %}
+                    <img src="{{ listing.image.url }}" class="card-img-top" alt="image">
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4 themed-grid-col">
+        <div class="card-body mb-3">
+            <h4 class="card-title"><strong>Description:</strong></h4>
+            <p class="card-text">{{listing.description|truncatewords:50}}</p>
+            <p class="card-text"><strong>${{ listing.price }}</strong></p>
+            <p class="card-text"><small class="text-muted">Created on:  {{listing.time|date:"M. d, Y"}}, {{ listing.time|time:"P" }}</small></p>
+        </div>
+        
+        {% if not listing.closed %}
+            <form action="{% url 'listing_page' listing.id %}" method="POST">
+                {% csrf_token %}
+                <div class="form-group mb-1">
+                    {% if bid_amount > 0 %}
+                        <small>{{ bid_amount }} bid(s) so far. {{ message }}</small>
+                    {% else %}
+                        <small>No bids so far.</small>
+                {% endif %}
+                </div>
+                {% if user.is_authenticated and user.id != listing.seller.id %}
+                    <div class="form-group mb-2">
+                        {{ bid_form }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="button" class="btn btn-primary " value="Place Bid">
+                    </div>
+                {% endif %}
+            </form>
+        {% endif %}
+    </div>
+        <div class="row mb-3 text-center">
+            <h4>Comments</h4>
+                {% for comment in comments %}
+                <div class="container m3-5 mb-2 p-2 border">
+                    <h5 class="card-header h5">{{comment.user.username}}</h5>
+                    <p class="mt-n2">{{ comment.comment }}</p>
+                    <p class="mt-n3"><small>{{ comment.time }}</small></p>
+                </div>
+                {% empty %}
+                <div class="mb-3">
+                    No comments yet
+                </div>
+                {% endfor %}
+            {% if not listing.closed %}
+            {% if user.is_authenticated %}
+                <div class="col-md-10 themed-grid-col">
+                    <h2>ADD COMMENT</h2>
+                    <form action="{% url 'addcomment' listing.id %}" method="POST">
+                        {% csrf_token %}
+                        <div class="mb-2">
+                            {{ comment_form }}
+                        </div>
+                </div>
+                    <div class="col-md-2 themed-grid-col position-relative">
+                        <input type="submit" value="Comment" class="btn btn-primary btn-new-blue position-absolute top-50 start-50 translate-middle btn-lg">
+                    </div>
+                    </form>
+                {% endif %}
+            {% endif %}
+        </div>
+        </div>
+    </div>
+
+{% endblock %}

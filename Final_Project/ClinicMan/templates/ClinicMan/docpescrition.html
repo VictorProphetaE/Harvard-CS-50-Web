@@ -1,0 +1,31 @@
+{% extends "ClinicMan/layout.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="mx-auto">
+    <h2>Prescription Patient</h2>
+    <div class="container-fluid">
+        <form action="{% url 'docpescrition' %}" method="post">
+            {% csrf_token %}
+            </tr>
+            <div class="row mb-3">
+                <select name="appointment">
+                    {% for appointment in appointments %}
+                        {% if appointment.status == True %}
+                            <option value={{appointment.id}}>{{ appointment.patient }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="row mb-3">
+                <input type="text" name="symptoms" placeholder="symptoms" class="form-control">
+            </div>
+            <div class="row mb-3">
+                <input type="text" name="prescription" placeholder="prescription" class="form-control">
+            </div>
+            <input class="btn btn-primary" type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+{% endblock %}

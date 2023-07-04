@@ -1,0 +1,17 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+        <center>
+        {% if request.user.id == listing.seller.id and highest_bid is not None %}
+                <h2>Congratulations!</h2>
+                <h3>You sold the item: {{ listing.title }} for ${{ listing.price }} .
+                Contact the buyer {{ winner.username }} to continue the sale.</h3>
+        {% elif request.user.id == winner.id %}
+                <h2>Congratulations!</h2> 
+                <h3>You purchased the item: {{ listing.title }} for $ {{ listing.price }} .
+                Please contact: {{ listing.seller.username }} to finalize the purchase.</h3>
+        {% else %}
+                <h2>Nobody bid on your product before you closed it</h2>
+        {% endif %}
+        </center>
+{% endblock %}

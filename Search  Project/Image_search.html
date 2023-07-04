@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Image Search</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css" >
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-light justify-content-end">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page"  href="index.html">Back to Search</a>
+                </li>
+            </ul>
+        </nav>
+        <center class="center">
+            <img src="cat search 3.jpg" alt="Cat" class="image" >
+            <form class="container-fluid" action="https://google.com/search">
+                <div class="form-group">
+                    <div class="input-group mb-4 flex-wrap: wrap justify-content-center">
+                        <span class="input-group-text bg-light">
+                            <svg focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"></path>
+                            </svg>
+                        </span>
+                        <input type="text" name="q" class="form-control">
+                    </div>
+                </div> 
+                <input hidden="true" name="tbm" value="isch">
+                <input class="btn btn-primary" aria-label="Google Image" role="button" type="submit" value="Google Image">
+            </form>
+        </center>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -1,0 +1,108 @@
+textarea {
+    min-height: 400px;
+}
+
+body{
+    font-family: Verdana, Geneva, Tahoma,Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.Active{
+    background-color:White;
+}
+
+.Inactive{
+    background-color:gray;
+}
+
+.table td, .table th{
+    padding: 0.5rem;
+    max-width: 370px;
+    text-align: left;
+}
+
+.table{
+  width: 100%;
+  border-width: 1px 0px;
+  border-color: rgb(222, 226, 230);
+  border-style: solid;
+  margin: 0px -1.5rem;
+    margin-right: -1.5rem;
+    margin-left: -1.5rem;
+  vertical-align:   top;
+}
+
+.button-loc{
+  float: right;
+  margin-right:6px
+
+}
+
+.Archive {
+  background-color: transparent;
+  border-radius: 10px;
+  width: 150px;
+  border-color: #6c757d;
+  color: #6c757d;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border: 2px solid;
+}
+.Archive:hover{
+  background-color: #6c757d;
+  border-color: #6c757d;
+  color: White;
+}
+
+.Unarchive
+{
+  background-color: transparent;
+  border-radius: 10px;
+  width: 150px;
+  color: #007bff;
+  border-color: #007bff;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border: 2px solid;
+}
+.Unarchive:hover {  
+  background-color: #0b5ed7;
+  border-color: #0a58ca;
+  color: White;
+}
+
+.button1
+{
+  background-color: white; 
+  border-radius: 10px;
+  width: 150px;
+  color: black;
+  border-color: black;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  padding: .25rem .5rem;
+  font-size: .875rem;
+  line-height: 1.5;
+  border: 2px solid;
+}
+
+.button1:hover{
+  background-color: black;
+  border-color: black;
+  color: White;
+}
+
+.White{
+  background-color:White;
+}
+/*# sourceMappingURL=styles.css.map */

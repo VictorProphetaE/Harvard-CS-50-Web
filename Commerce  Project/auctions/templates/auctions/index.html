@@ -1,0 +1,28 @@
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <center><h2>Active Listings</h2></center>
+        <div class="row g-3">
+        {% for listing in listings %}
+            {% if not listing.closed %}
+                <div class="card col-3 mx-2 border-dark" style="width: 22rem;">
+                    <a href="{% url 'listing_page' listing.id %}">
+                    {% if listing.image %}
+                        <img src="{{ listing.image.url }}" class="img-fluid rounded" alt="image">
+                    {% endif %}
+                    <div class="card-body text-dark">
+                            <h5 class="card-title"><strong>{{ listing.item }}</strong></h5>
+                            <p class="card-text"><strong>Description</strong>: {{listing.description|truncatewords:10}}</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Price</strong>: $ {{listing.price}} </li>
+                    </ul>
+                    <div class="card-footer">
+                        <small cclass="listing-list-date">Created: {{listing.time|date:"M. d, Y"}}, {{ listing.time|time:"P" }}</small>
+                    </div>  
+                    </a>
+                </div>                    
+        {% endif %}
+    {% endfor %}
+    </div>
+{% endblock %}
