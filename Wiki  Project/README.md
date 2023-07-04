@@ -48,4 +48,6 @@ Certifique-se de ter o Django instalado em seu ambiente. Você pode instalar o D
 Após instalar o Django, você pode executar o projeto usando o seguinte comando:
     `python manage.py runserver`
 
-Isso iniciará o servidor de desenvolvimento do Django e você poderá acessar a enciclopédia em seu navegador através do endereço http://localhost:8000/.
+Isso iniciará o servidor de desenvolvimento do Django e você poderá acessar a enciclopédia em seu navegador através do endereço `http://localhost:8000/`.
+
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/1/wiki/) para acessar a página do desafio. 
