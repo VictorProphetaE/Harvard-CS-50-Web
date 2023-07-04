@@ -59,5 +59,6 @@ Siga as etapas abaixo para configurar e executar a aplicação:
 
 - Perfil do usuário: cada usuário tem uma página de perfil que exibe suas postagens, número de seguidores e número de pessoas que ele está seguindo. Os usuários autenticados podem seguir ou deixar de seguir outros usuários a partir de suas páginas de perfil.
 
- -Página de seguindo: a página de seguindo exibe as postagens dos usuários que o usuário está seguindo, ordenadas por tempo decrescente.
+- Página de seguindo: a página de seguindo exibe as postagens dos usuários que o usuário está seguindo, ordenadas por tempo decrescente.
 
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/4/network/) para acessar a página do desafio. 
