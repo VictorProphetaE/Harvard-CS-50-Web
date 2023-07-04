@@ -80,3 +80,5 @@ O sistema possui as seguintes funcionalidades principais:
 - closed_listing.html: Template para exibir os detalhes de um leilão fechado.
 
 - index.html: Template para exibir a lista de leilões ativos na página inicial.
+
+Acesse a [página do desafio](https://cs50.harvard.edu/web/2020/projects/2/commerce/) para acessar a página do desafio. 
